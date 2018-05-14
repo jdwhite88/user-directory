@@ -1,24 +1,22 @@
-// Get first element with the element 'button'
-//const button = document.querySelector('button');
-
-// Get element with the id 'changeTextButton' (#)
-//const button = document.querySelector('#changeTextButton');
-
-// Get first element with the class 'greeting' (.)
-//const button = document.querySelector('.greeting');
-
-// Get first element with the element 'button' and class 'greeting'
+// First <button> element with class 'greeting'
 const button = document.querySelector('button.greeting');
 
 function changeText(ev) {
     
+    // First <p> element with class 'greeting'
     const paragraph = document.querySelector('p.greeting');
-    const title = document.querySelector('h1#title');
-    // Change text of first <p> element with class 'greeting'
+    // First <h1> element with class 'heading'
+    const titleHeading = document.querySelector('h1.heading');
+    // Element with id 'message'
+    const messageHeading = document.querySelector('#message');
+    // Third element with class 'heading'
+    const optionsHeading = document.querySelectorAll('.heading')[2];
+
     paragraph.textContent = "Text has changed!";
-    // Change text of first <h1> element with class 'title'
-    title.textContent = "New User Directory";
-    // Change text of the element that called the function
+    titleHeading.textContent = "New User Directory";
+    messageHeading.textContent = "Changed Message";
+    optionsHeading.textContent = "Updated Options";
+
     ev.target.textContent = "Change Text Again";
 }
 
