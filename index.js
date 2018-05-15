@@ -11,7 +11,7 @@ const handleSubmit = function(ev) {
 
     const userName = form.userName.value;
     const age = form.age.value;
-    const color = form.favoriteColor.value;
+    const favoriteColor = form.favoriteColor.value;
 
     // Adding to div in HMTL:
     //  <ul>
@@ -24,12 +24,18 @@ const handleSubmit = function(ev) {
     nameItem.textContent = `Name: ${userName}`;
     const ageItem = document.createElement('li');
     ageItem.textContent = `Age: ${age}`;
+    const colorItem = document.createElement('li');
+    colorItem.textContent = `Favorite Color: ${favoriteColor}`;
+    const colorSwatch = document.createElement('div');
+    //Set dimensions of color swatch
+    colorSwatch.style.width = '6rem';
+    colorSwatch.style.height = '3rem';
+    colorSwatch.style.backgroundColor = favoriteColor;
 
-    nameItem.style.backgroundColor = color;
-    ageItem.style.backgroundColor = color;
-    
+    colorItem.appendChild(colorSwatch);
     list.appendChild(nameItem);
     list.appendChild(ageItem);
+    list.appendChild(colorItem);
     users.appendChild(list);
 
     form.reset();
