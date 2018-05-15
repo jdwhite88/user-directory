@@ -1,5 +1,16 @@
 // First <button> element with class 'greeting'
 const button = document.querySelector('button.greeting');
+const form = document.querySelector('#userForm');
+
+const handleSubmit = function(ev) {
+    // Prevent submit button from refreshing pahe
+    ev.preventDefault();
+    const heading = document.querySelector('h1');
+    const userName = ev.target.user.value;
+    heading.textContent = userName;
+}
+form.addEventListener('submit', handleSubmit);
+
 
 function changeText(ev) {
     
@@ -10,8 +21,7 @@ function changeText(ev) {
     // Element with id 'message'
     const messageHeading = document.querySelectorAll('.heading')[1];
     // Text input form for updating heading
-    const newDirField = document.querySelector("input[type='text']");
-    debugger;
+    const newDirField = document.querySelector("#user");
 
     paragraph.textContent = "Directory has changed!";
     titleHeading.textContent = newDirField.value;
