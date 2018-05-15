@@ -9,11 +9,13 @@ const handleSubmit = function(ev) {
     const users = document.querySelector('#users');
     const form = ev.target;
 
-    const userName = form.user.value;
+    const username = form.userName.value;
     const age = form.age.value;
-    //users.innerHTML += `<p>${userName}, ${age}<\p>`;
+    const color = form.favoriteColor.value;
+
     const p = document.createElement('p');
-    p.textContent = `${userName}, ${age}`;
+    p.textContent = `${username}, ${age}`;
+    p.style.backgroundColor = color;
     users.appendChild(p);
 
     form.reset();
