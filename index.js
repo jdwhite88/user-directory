@@ -11,7 +11,10 @@ const handleSubmit = function(ev) {
 
     const userName = form.user.value;
     const age = form.age.value;
-    users.innerHTML += `<p>${userName}, ${age}<\p>`;
+    //users.innerHTML += `<p>${userName}, ${age}<\p>`;
+    const p = document.createElement('p');
+    p.textContent = `${userName}, ${age}`;
+    users.appendChild(p);
 
     form.reset();
     form.userName.focus();
