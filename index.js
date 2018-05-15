@@ -5,9 +5,9 @@ const form = document.querySelector('#userForm');
 const handleSubmit = function(ev) {
     // Prevent submit button from refreshing pahe
     ev.preventDefault();
-    const heading = document.querySelector('h1');
+    const users = document.querySelector('#users');
     const userName = ev.target.user.value;
-    heading.textContent = userName;
+    users.textContent += userName + ' ';
 }
 form.addEventListener('submit', handleSubmit);
 
