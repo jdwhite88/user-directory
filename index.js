@@ -8,14 +8,15 @@ function changeText(ev) {
     // First <h1> element with class 'heading'
     const titleHeading = document.querySelector('h1.heading');
     // Element with id 'message'
-    const messageHeading = document.querySelector('#message');
-    // Third element with class 'heading'
-    const optionsHeading = document.querySelectorAll('.heading')[2];
+    const messageHeading = document.querySelectorAll('.heading')[1];
+    // Text input form for updating heading
+    const newDirField = document.querySelector("input[type='text']");
+    debugger;
 
-    paragraph.textContent = "Text has changed!";
-    titleHeading.textContent = "New User Directory";
+    paragraph.textContent = "Directory has changed!";
+    titleHeading.textContent = newDirField.value;
+    newDirField.value = '';
     messageHeading.textContent = "Changed Message";
-    optionsHeading.textContent = "Updated Options";
 
     ev.target.textContent = "Change Text Again";
 }
