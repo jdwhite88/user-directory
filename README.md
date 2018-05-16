@@ -1,12 +1,18 @@
 # user-directory
 
-A webpage demonstrating simple interactions between JavaScript, HTML, and CSS files. 
+A webpage that displays a list of users on screen, each with a name, age, and favorite color.
 
-This project is homework 1 for XTern Bootcamp 2018 Session 1.
+This project is the 1st-3rd homework for XTern Bootcamp 2018, Session 1.
 
 ## Setup
  1. Download the [repo](https://github.com/jdwhite88/user-directory) files.
- 2. Open the [index.html](index.html) file in your favorite internet browser.
+ 2. Open the [index.html](index.html) file in your favorite internet browser that supports ES6 (not IE or Opera).
+ 
+ ## TODO
+ * Center Submit button on page
+ * Alert visitor if not all fields have been filled out when form submitted
+ * Refactor code to accept both html and strings in renderListItem function
+ * Refactor code to automatically update message when user count changes
 
 ## Author
 * **Jacob White** - [GitHub](https://github.com/jdwhite88)
