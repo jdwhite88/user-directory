@@ -1,4 +1,5 @@
 body {
+    background-color: lightgoldenrodyellow;
     font-family: sans-serif;
     text-align: center;
 }
@@ -20,10 +21,12 @@ form input {
     display: table-cell;
 }
 form button {
-    margin: auto;
+    
 }
 
 .swatch {
+    margin-left: 1.3em; 
+    border: 1px solid #000;
     cursor: pointer;
 }
 
@@ -31,5 +34,6 @@ ul {
     text-align: left;
     padding: 0.5em;
     list-style-position: inside;
+    background-color: #F0F0F0;
     border: 1px solid #000;
 }

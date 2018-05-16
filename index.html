@@ -10,10 +10,9 @@
 </head>
 <body>
     <h1>User Directory</h1>
-    <h2>Message</h2>
-    <p class="greeting">Welcome, friend!</p>
-    <h2>Options</h2>
-    
+    <p id="welcome" class="greeting">Welcome! There are no users in the directory.</p>
+
+    <h2>New User</h2>
     <form id="userForm">
         <p>
             <label for="userName">Name: </label>
@@ -27,11 +26,13 @@
             <label for="favoriteColor">Favorite Color: </label>
             <input type="color" name="favoriteColor" value="#000000">
         </p>
-        <!-- Submit button by default sends to webpage specified by "action", or itself -->
-        <button type="submit">Go</button>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
     </form>
 
     <!-- Will contain list of submitted users -->
+    <h2>Users</h2>
     <div id="users">
     </div>
 

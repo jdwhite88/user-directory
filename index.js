@@ -3,6 +3,8 @@ const button = document.querySelector('button.greeting');
 // First element with id 'userForm'
 const form = document.querySelector('#userForm');
 
+let numUsers = 0;
+
 const handleSubmit = function(ev) {
     // Prevent submit button from refreshing page
     ev.preventDefault();
@@ -11,6 +13,9 @@ const handleSubmit = function(ev) {
 
     const list = renderList();
     users.appendChild(list);
+
+    numUsers++;
+    renderMessage();
 
     form.reset();
     form.userName.focus();
@@ -60,12 +65,12 @@ function renderList() {
     return list;
 }
 
-//Change the color of the input to the swatch the user clicked
+// Change the color of the input to the swatch the user clicked
 function updateColor(ev) {
     form.favoriteColor.value = parseRGB(ev.target.style.backgroundColor);
 }
 
-//Convert "rgb(r, g, b)" (base-10 string) to "#rrggbb" (base-16 string)
+// Convert "rgb(r, g, b)" (base-10 string) to "#rrggbb" (base-16 string)
 function parseRGB(rgb) {
     //Match 'rgb(#, #, #)' for the component numbers
     const rgbMatch = rgb.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
@@ -75,20 +80,34 @@ function parseRGB(rgb) {
     return rgbToHex(red, green, blue);
 }
 
-//Convert base-10 RGB colors (numbers) to base-16 color code (string)
+// Convert base-10 RGB colors (numbers) to base-16 color code (string)
 function rgbToHex(r, g, b) {
     let hex = "#";
     hex += componentToHex(r) + componentToHex(g) + componentToHex(b);
     return hex;
 }
 
-//Convert base-10 color component (number) to base-16 (string)
+// Convert base-10 color component (number) to base-16 (string)
 function componentToHex(rgbComp) {
     let hexComp = Number(rgbComp).toString(16);
     if (hexComp.length < 2) {
         hexComp = '0' + hexComp;
     }
     return hexComp;
+}
+
+// Update message for new number of users.
+function renderMessage() {
+    const message = document.querySelector('#welcome');
+    if (numUsers <= 0) {
+        message.textContent = 'Welcome! There are no users in the directory.';
+    }
+    else if (numUsers === 1) {
+        message.textContent = 'There is 1 user in the directory.';
+    }
+    else {
+        message.textContent = `There are ${numUsers} users in the directory.`;
+    }
 }
 
 form.addEventListener('submit', handleSubmit);
