@@ -9,30 +9,15 @@ const handleSubmit = function(ev) {
     const users = document.querySelector('#users');
     const form = ev.target;
 
-    const userName = form.userName.value;
-    const age = form.age.value;
-    const favoriteColor = form.favoriteColor.value;
+    
 
-    // Adding to div in HMTL:
+    // List in HMTL:
     //  <ul>
-    //     <li>Name: [username]</li>
+    //     <li>Name: [userName]</li>
     //     <li>Age: [age]</li>
-    //     <li></li>
+    //     <li>Favorite Color: #xxxxxx <div style="background-color:#xxxxxx; height:'3rem'; width:'6rem';"></div></li>
     // </ul>
-    const list = document.createElement('ul');
-    const nameItem = document.createElement('li');
-    nameItem.textContent = `Name: ${userName}`;
-    const ageItem = document.createElement('li');
-    ageItem.textContent = `Age: ${age}`;
-    const colorItem = document.createElement('li');
-    colorItem.textContent = `Favorite Color: ${favoriteColor}`;
-    const colorSwatch = renderColor(form);
-    //Set dimensions of color swatch
-
-    colorItem.appendChild(colorSwatch);
-    list.appendChild(nameItem);
-    list.appendChild(ageItem);
-    list.appendChild(colorItem);
+    const list = renderList(form);
     users.appendChild(list);
 
     form.reset();
@@ -40,21 +25,39 @@ const handleSubmit = function(ev) {
 }
 
 // Takes the color value from the color selector, coloring and returning a div.
-function renderColor(form) {
-    const favoriteColor = form.favoriteColor.value;
+function renderColor(color) {
     const colorSwatch = document.createElement('div');
     colorSwatch.style.width = '6rem';
     colorSwatch.style.height = '3rem';
-    colorSwatch.style.backgroundColor = favoriteColor;
+    colorSwatch.style.backgroundColor = color;
     return colorSwatch;
 }
 
-
-function renderListItem(form) {
+// Given the input and a name for the input, return a list item containing text in the form "<name>: <input>"
+function renderListItem(name, input) {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${name}: ${input}`;
+    return listItem;
 }
 
+// Returns a list containing the form values: the user name, age, and favorite color (with a swatch displaying the color)
 function renderList(form) {
+    const userName = form.userName.value;
+    const age = form.age.value;
+    const color = form.favoriteColor.value;
 
+    const list = document.createElement('ul');
+    const nameItem = renderListItem('Name', userName);
+    const ageItem = renderListItem('Age', age);
+    const colorItem = renderListItem('Favorite Color', color);
+    const colorSwatch = renderColor(color);
+    colorItem.appendChild(colorSwatch);
+
+    list.appendChild(nameItem);
+    list.appendChild(ageItem);
+    list.appendChild(colorItem);
+
+    return list;
 }
 
 form.addEventListener('submit', handleSubmit);
