@@ -26,11 +26,8 @@ const handleSubmit = function(ev) {
     ageItem.textContent = `Age: ${age}`;
     const colorItem = document.createElement('li');
     colorItem.textContent = `Favorite Color: ${favoriteColor}`;
-    const colorSwatch = document.createElement('div');
+    const colorSwatch = renderColor(form);
     //Set dimensions of color swatch
-    colorSwatch.style.width = '6rem';
-    colorSwatch.style.height = '3rem';
-    colorSwatch.style.backgroundColor = favoriteColor;
 
     colorItem.appendChild(colorSwatch);
     list.appendChild(nameItem);
@@ -41,4 +38,23 @@ const handleSubmit = function(ev) {
     form.reset();
     form.userName.focus();
 }
+
+// Takes the color value from the color selector, coloring and returning a div.
+function renderColor(form) {
+    const favoriteColor = form.favoriteColor.value;
+    const colorSwatch = document.createElement('div');
+    colorSwatch.style.width = '6rem';
+    colorSwatch.style.height = '3rem';
+    colorSwatch.style.backgroundColor = favoriteColor;
+    return colorSwatch;
+}
+
+
+function renderListItem(form) {
+}
+
+function renderList(form) {
+
+}
+
 form.addEventListener('submit', handleSubmit);
