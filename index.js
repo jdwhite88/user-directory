@@ -9,14 +9,6 @@ const handleSubmit = function(ev) {
     const users = document.querySelector('#users');
     const form = ev.target;
 
-    
-
-    // List in HMTL:
-    //  <ul>
-    //     <li>Name: [userName]</li>
-    //     <li>Age: [age]</li>
-    //     <li>Favorite Color: #xxxxxx <div style="background-color:#xxxxxx; height:'3rem'; width:'6rem';"></div></li>
-    // </ul>
     const list = renderList(form);
     users.appendChild(list);
 
@@ -41,6 +33,12 @@ function renderListItem(name, input) {
 }
 
 // Returns a list containing the form values: the user name, age, and favorite color (with a swatch displaying the color)
+// List in HMTL:
+// <ul>
+//     <li>Name: [userName]</li>
+//     <li>Age: [age]</li>
+//     <li>Favorite Color: #xxxxxx <div style="background-color:#xxxxxx; height: 3rem; width: 6rem;"></div></li>
+// </ul>
 function renderList(form) {
     const userName = form.userName.value;
     const age = form.age.value;
