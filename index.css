@@ -12,18 +12,20 @@ form p {
     display: table-row;
 }
 form label {
+    text-align: left;
     display: table-cell;
 }
 form input {
+    text-align: left;
     display: table-cell;
 }
 form button {
     margin: auto;
 }
 
-/* #users {
-    margin: auto;
-} */
+.swatch {
+    cursor: pointer;
+}
 
 ul {
     text-align: left;
