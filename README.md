@@ -6,12 +6,6 @@ This project is the 1st-2nd homework for XTern Bootcamp 2018, Session 1.
 
 ## Setup
  1. Open the [webpage](https://jdwhite88.github.io/user-directory/) in your favorite internet browser that supports ES6 (not IE or Opera).
- 
- ## TODO
- * Alert visitor if not all fields have been filled out when form submitted
- * Refactor code to accept both html and strings in renderListItem function
- * Change unordered lists for each user to description lists
- * <del>Automatically update message when user count changes</del>
 
 ## Author
 * **Jacob White** - [GitHub](https://github.com/jdwhite88)
