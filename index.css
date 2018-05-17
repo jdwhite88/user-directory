@@ -4,25 +4,32 @@ body {
     text-align: center;
 }
 
+main {
+    justify-content: space-around;
+}
+
 form {
-    display: table;
-    border-spacing: 0.3em;
-    margin: auto;
+    background-color: #eeeeee;
+    padding: 1rem;
+    border: 1px solid #e3e3e3;
+    text-align: center;
 }
-form p {
-    display: table-row;
+
+label {
+    display: block;
 }
-form label {
-    text-align: left;
-    display: table-cell;
+
+/*dl {
+    padding: 1rem;
 }
-form input {
-    text-align: left;
-    display: table-cell;
+
+dl > li {
+    list-style: none;
 }
-form button {
-    
-}
+
+dl:nth-of-type(even) {
+    background-color: whitesmoke;
+}*/
 
 .swatch {
     margin-left: 1.3em; 

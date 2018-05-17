@@ -12,29 +12,33 @@
     <h1>User Directory</h1>
     <p id="welcome" class="greeting">Welcome! There are no users in the directory.</p>
 
-    <h2>New User</h2>
-    <form id="userForm">
-        <p>
-            <label for="userName">Name: </label>
-            <input type="text" name="userName" autofocus>
-        </p>
-        <p>
-            <label for="age">Age: </label>
-            <input type="number" name="age">
-        </p>
-        <p>
-            <label for="favoriteColor">Favorite Color: </label>
-            <input type="color" name="favoriteColor" value="#000000">
-        </p>
-        <p>
-            <button type="submit">Submit</button>
-        </p>
-    </form>
+    
 
-    <!-- Will contain list of submitted users -->
-    <h2>Users</h2>
-    <div id="users">
-    </div>
+    
+    <main>
+        <h2>New User</h2>
+        <form id="userForm">
+            <p>
+                <label for="userName">Name: </label>
+                <input type="text" name="userName" autofocus>
+            </p>
+            <p>
+                <label for="age">Age: </label>
+                <input type="number" name="age">
+            </p>
+            <p>
+                <label for="favoriteColor">Favorite Color: </label>
+                <input type="color" name="favoriteColor" value="#000000">
+            </p>
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+        </form>
+    
+        <h2>Users</h2>
+        <!-- Will contain list of submitted users -->
+        <div id="users"></div>
+    </main>
 
 
     <!-- Execute JS once page renders (at end of body) -->
